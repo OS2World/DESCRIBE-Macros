@@ -1,0 +1,19 @@
+This is combined macro/layout set of tools for printing 
+envelopes using Describe 3. It may work with other version 
+of Describe as well, but has not been tested. The following 
+files are Describe documents and should be edited or viewed 
+only with Describe. Additional information is contained in 
+ENVELOPE.DOC:
+
+ENVELOPE.DOC	Documentation file
+ENVELOPE.LAY	Layout file used for printing envelopes
+ENVELOPE.MAC	The main envelope macro
+
+
+If you want to distribute this macro solution to others, 
+make certain that the preceding three files are included in 
+whatever you send.
+
+Herb Tyson
+on Pete Norloff's OS/2 Shareware BBS
+on CompuServe, 72520,1054

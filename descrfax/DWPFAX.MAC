@@ -1,0 +1,46 @@
+!   This DeScribe Macro was designed to work with a user defined layout to
+!   create either a FAX  cover sheet, or a one page FAX.
+!
+!   The macro utilizes three DeScribe Macro Language features:
+!          The capability of "nesting" other DeScribe macros.
+!          The "pop up input window".
+!          The 26 automatically declared variables.
+!
+!   To successfully use this macro, you will need to do the following:
+!            - Create a layout for a FAX cover sheet.
+!            - Insert asterisks where you intend to make replacements.
+!            - Save your layout with the cursor in the position you wish the date to 
+!                 print.
+!            - Change the macro text to find your layout at the NewDocumentFile 
+!                 statement.
+!            - Change the macro to find the macro directory where the DATEFULL
+!                 macro is located.
+!            - Compile the macro.
+!
+!
+MACRO DeScribeMacro
+    NewDocumentFile "C:\DeScribe\Layout\YOURFAXLAYOUT"
+    PlayMacro "C:\DeScribe\Macros\DATEFULL"
+SearchClear
+    SET SearchSearch1 TO "*"
+    SET SearchConfirm1 TO FALSE
+    SearchForward
+    GET "Enter Customer Name." TOSTRING A
+PUT A
+    SearchClear
+    SET SearchSearch1 TO "**"
+    SET SearchConfirm1 TO FALSE
+    SearchForward
+    GET "Enter Company Name." TOSTRING B
+PUT B
+    SearchClear
+    SET SearchSearch1 TO "***"
+    SET SearchConfirm1 TO FALSE
+    SearchForward
+    GET "Enter FAX Number." TOSTRING C
+PUT C
+    SET SearchSearch1 TO "****"
+    SET SearchConfirm1 TO FALSE
+    SearchForward
+MSG "Enter Information and Print FAX."
+END MACRO
